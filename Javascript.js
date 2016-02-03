@@ -3,5 +3,15 @@
  */
 
 jQuery(document).ready(function () {
-    jQuery('.tabs')
-}
+    jQuery('.tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+
+
+   jQuery('.tabs' + currentAttrValue).fadeIn(400).siblings ().hide;
+
+        jQuery(this).parent('li').addClass ('active').siblings ().removeClass('active');
+
+        e.preventDefault();
+
+    });
+});

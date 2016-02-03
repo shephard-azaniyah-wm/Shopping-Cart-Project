@@ -3,5 +3,60 @@
 <head>
     <title>Crafty Bits</title>
 
+
+    <style>
+        ul#generatecssdotcom_animated_menu {margin:0px;padding:0px;list-style:none;z-index:999999;}
+        ul#generatecssdotcom_animated_menu li {display:inline;float:left;width:100px;margin-left:1px;}
+        ul#generatecssdotcom_animated_menu li a {display:block;font-weight:bold;font-size:19px;text-shadow:1px 1px 1px #322415;float:left;width:100px;height:35px;color:#f2b580;background:transparent url(http://www.generatecss.com/images/brownpaper.png) no-repeat bottom right;text-decoration:none;text-align:center;padding-top:80px;margin-top:-40px;cursor:pointer;}
+        .menu-background {position:absolute;top:0;right:0;font-size:8px;color:#cccccc;}
+        .menu-background a {color:#cccccc;text-decoration:none;font-weight:normal;}
+        .menu-background a:hover {color:#cccccc;text-decoration:none;font-weight:normal;}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+    <ul id="generatecssdotcom_animated_menu">
+        <li><a href="http://www.generatecss.com%2Fadvanced%2Fmenus%2F">Click Me</a></li>
+        <li><a href="http://www.funimation.com%2F">Click Me</a></li>
+        <li><a href="http://www.bing.com%2F%3FFORM%3DMFEHPG%26PUBL%3DGoogle%26CREA%3Duserid1743go51d367c64cb6b50c6d8b0b7fe5f35618">Click Me</a></li>
+        <li><a href="Home%20Page.html">Home Page</a></li>
+    </ul>
+    </ul>
+
+    <script>
+        $(function() {
+            var d=300;
+            $('#generatecssdotcom_animated_menu a').each(function(){
+                var $this = $(this);
+                var r=Math.floor(Math.random()*41)-20;
+                $this.css({
+                    '-moz-transform':'rotate('+r+'deg)',
+                    '-webkit-transform':'rotate('+r+'deg)',
+                    'transform':'rotate('+r+'deg)'
+                });
+                $this.stop().animate({
+                    'marginTop':'-70px'
+                },d+=150);
+            });
+            $('#generatecssdotcom_animated_menu > li').hover(
+                    function () {
+                        var $this = $(this);
+                        $('a',$this).stop().animate({
+                            'marginTop':'-40px'
+                        },200);
+                    },
+                    function () {
+                        var $this = $(this);
+                        $('a',$this).stop().animate({
+                            'marginTop':'-70px'
+                        },200);
+                    }
+            ).click(function(){
+                        var $this = $(this);
+                        var name = this.className;
+                    });
+        });
+    </script>
 </head>
 </html>
