@@ -3,6 +3,9 @@
  <head>
      <title>Lucky Bunny</title>
  </head>
+
+
+ <!--Css for Cardboard Task Bars-->
  <style>
      ul#generatecssdotcom_animated_menu {margin:0px;padding:0px;list-style:none;z-index:999999;}
      ul#generatecssdotcom_animated_menu li {display:inline;float:left;width:100px;margin-left:1px;}
@@ -18,10 +21,20 @@
  <ul id="generatecssdotcom_animated_menu">
      <li><a href="http://www.generatecss.com%2Fadvanced%2Fmenus%2F">Home</a></li>
      <li><a href="Products.html">Products</a></li>
-     <li><a href="http://www.bing.com%2F%3FFORM%3DMFEHPG%26PUBL%3DGoogle%26CREA%3Duserid1743go51d367c64cb6b50c6d8b0b7fe5f35618">Hello friend</a></li>
+     <li><a href="About%20Us.html">About Us</a></li>
  </ul>
  </ul>
 
+ <!--Css for Sliding Images-->
+ <style>
+     .generatecssdotcom_slide_56b3bfcdbb397 {position:absolute;top:0;right:0;font-size:8px;color:#cccccc;}
+     .generatecssdotcom_slide_56b3bfcdbb397 a {color:#cccccc;text-decoration:none;font-weight:normal;}
+     .generatecssdotcom_slide_56b3bfcdbb397 a:hover {color:#cccccc;text-decoration:none;font-weight:normal;}
+     #auto_scroll_slider {width:556px;height:425px;overflow:hidden;border:9px solid #fff2bf;}
+     /* CSS by GenerateCSS.com */
+ </style>
+
+ <!--Cardboard Task Bars-->
  <script>
      $(function() {
          var d=300;
@@ -56,8 +69,75 @@
                  });
      });
  </script>
-     <body bgcolor="#ffebcd">
-     <h1>Lucky Bunny</h1>
+
+ <!--Background and Title-->
+     <body background="https://secure.static.tumblr.com/3b2c7fb29fe9c5d147e4989b7f02eb6b/kulrx9i/RVwnx2m2h/tumblr_static_tumblr_static_221ik0t0p2ysg8oc4kkcow8kg_640.jpg">
+     <h1 align="right" style="color:#FFAC37;">Lucky Bunny</h1>
+
+     <p align="center">Welcome to our small Boutique of amazing products</p>
+
+     <!--Sliding Images-->
+
+     <div id="auto_scroll_slider">
+         <figure id="auto_slider">
+             <img src="https://img0.etsystatic.com/000/0/5233307/il_570xN.27816126.jpg" title="GenerateCSS.com">
+             <img src="https://img1.etsystatic.com/000/0/5233307/il_570xN.27811701.jpg" title="GenerateCSS.com">
+             <img src="https://img1.etsystatic.com/000/0/5233307/il_570xN.28304395.jpg" title="GenerateCSS.com">
+             <img src="https://img1.etsystatic.com/000/0/5233307/il_570xN.28304213.jpg" title="GenerateCSS.com">
+         </figure>
+     </div>
+     <div class="generatecssdotcom_slide_56b3bfcdbb397">Powered by: <a href="http://www.generatecss.com">CSS Generator</a></div>
+
+     <script>
+         var timeOnSlide = 3,
+                 timeBetweenSlides = 1,
+                 animationstring = 'animation',
+                 animation = false,
+                 keyframeprefix = '',
+                 domPrefixes = 'Webkit Moz O Khtml'.split(' '),
+                 pfx = '',
+                 auto_slider = document.getElementById("auto_slider");
+         if (auto_slider.style.animationName !== undefined) { animation = true; }
+         if ( animation === false ) {
+             for ( var i = 0; i < domPrefixes.length; i++ ) {
+                 if ( auto_slider.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+                     pfx = domPrefixes[ i ];
+                     animationstring = pfx + 'Animation';
+                     keyframeprefix = '-' + pfx.toLowerCase() + '-';
+                     animation = true;
+                     break;
+                 } } }
+         if ( animation === false ) {
+// animate using a JavaScript fallback, if you wish
+         } else {
+             var images = auto_slider.getElementsByTagName("img"),
+                     firstImg = images[0],
+                     imgWrap = firstImg.cloneNode(false);
+             auto_slider.appendChild(imgWrap);
+             var imgCount = images.length,
+                     totalTime = (timeOnSlide + timeBetweenSlides) * (imgCount - 1),
+                     slideRatio = (timeOnSlide / totalTime)*100,
+                     moveRatio = (timeBetweenSlides / totalTime)*100,
+                     basePercentage = 100/imgCount,
+                     position = 0,
+                     css = document.createElement("style");
+             css.type = "text/css";
+             css.innerHTML += "#auto_slider { margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%; }";
+             css.innerHTML += "#auto_slider img { width: " + basePercentage + "%; }";
+             css.innerHTML += "@"+keyframeprefix+"keyframes auto_slider {";
+             for (i=0;i<(imgCount-1); i++) {
+                 position+= slideRatio;
+                 css.innerHTML += position+"% { left: -"+(i * 100)+"%; }";
+                 position += moveRatio;
+                 css.innerHTML += position+"% { left: -"+((i+1) * 100)+"%; }";
+             }
+             css.innerHTML += "}";
+             css.innerHTML += "#auto_slider { left: 0%; "+keyframeprefix+"transform: translate3d(0,0,0); "+keyframeprefix+"animation: "+totalTime+"s auto_slider infinite; }";
+             document.body.appendChild(css);
+         }
+     </script>
 
    </body>
+
+
 </html>
