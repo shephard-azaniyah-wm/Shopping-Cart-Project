@@ -55,7 +55,7 @@ body {
     background-size: cover;
 }
 
-div#auto_scroll_slider {
-
+p.items {
+    outline: 1px dashed #eb9040;
+    outline-offset: 8px;
 }
-
