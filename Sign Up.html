@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<!--Css for Cardboard Task Bars-->
+<style>
+    ul#generatecssdotcom_animated_menu {margin:0px;padding:0px;list-style:none;z-index:999999;}
+    ul#generatecssdotcom_animated_menu li {display:inline;float:left;width:100px;margin-left:1px;}
+    ul#generatecssdotcom_animated_menu li a {display:block;font-weight:bold;font-size:19px;text-shadow:1px 1px 1px #322415;float:left;width:100px;height:35px;color:#f2b580;background:transparent url(http://www.generatecss.com/images/brownpaper.png) no-repeat bottom right;text-decoration:none;text-align:center;padding-top:80px;margin-top:-40px;cursor:pointer;}
+    .menu-background {position:absolute;top:0;right:0;font-size:8px;color:#cccccc;}
+    .menu-background a {color:#cccccc;text-decoration:none;font-weight:normal;}
+    .menu-background a:hover {color:#cccccc;text-decoration:none;font-weight:normal;}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+<ul id="generatecssdotcom_animated_menu">
+    <li><a href="Home%20Page.html">Home</a></li>
+    <li><a href="Products.html">Products</a></li>
+    <li><a href="About%20Us.html">About Us</a></li>
+</ul>
+</ul>
+
+
+<!--Cardboard Task Bars-->
+<script>
+    $(function() {
+        var d=300;
+        $('#generatecssdotcom_animated_menu a').each(function(){
+            var $this = $(this);
+            var r=Math.floor(Math.random()*41)-20;
+            $this.css({
+                '-moz-transform':'rotate('+r+'deg)',
+                '-webkit-transform':'rotate('+r+'deg)',
+                'transform':'rotate('+r+'deg)'
+            });
+            $this.stop().animate({
+                'marginTop':'-70px'
+            },d+=150);
+        });
+        $('#generatecssdotcom_animated_menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop().animate({
+                        'marginTop':'-40px'
+                    },200);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop().animate({
+                        'marginTop':'-70px'
+                    },200);
+                }
+        ).click(function(){
+                    var $this = $(this);
+                    var name = this.className;
+                });
+    });
+</script>
+
+<!--Background and Title-->
+<body background="http://www.psdgraphics.com/file/antique-paper.jpg">
+<a href="Cart%20page.html"><img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" align="right" width="42" height="42"></a>
+<h1 align="right" style="color:#FFAC37;">Lucky Bunny</h1>
+<hr>
+
+
+<img src="2016-02-08%2015.12.07.png" width="42" height="42">
+
+<div>
+    <ul><input class="enjoy-css" placeholder="Search"/>
+        <input type="button" class="enjoy-css" value="Search"/></ul>
+</div>
+
+<body>
+
+<form action="index.html" method="post">
+
+    <h1>Sign Up</h1>
+
+
+</form>  <fieldset class="bg">
+    <legend><span class="number"></span>Sign Up Info</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name">
+    <hr>
+
+    <label for="mail">Email:</label>
+    <input type="email" id="mail" name="user_email">
+    <hr>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="user_password">
+    <hr>
+
+    <label>Age:</label>
+    <input type="radio" id="under_13" value="under_18" name="user_age"><label for="under_13" class="light">Under 18</label><br>
+    <input type="radio" id="over_13" value="over_18" name="user_age"><label for="over_13" class="light">18 or older</label>
+</fieldset>
+
+
+<button type="submit">Sign Up</button>
+
+</body>
+</html>
