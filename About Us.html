@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <title>About Us</title>
 </head>
-<body>
 
-</body>
+<!--Css for Cardboard Task Bars-->
+<style>
+    ul#generatecssdotcom_animated_menu {margin:0px;padding:0px;list-style:none;z-index:999999;}
+    ul#generatecssdotcom_animated_menu li {display:inline;float:left;width:100px;margin-left:1px;}
+    ul#generatecssdotcom_animated_menu li a {display:block;font-weight:bold;font-size:19px;text-shadow:1px 1px 1px #322415;float:left;width:100px;height:35px;color:#f2b580;background:transparent url(http://www.generatecss.com/images/brownpaper.png) no-repeat bottom right;text-decoration:none;text-align:center;padding-top:80px;margin-top:-40px;cursor:pointer;}
+    .menu-background {position:absolute;top:0;right:0;font-size:8px;color:#cccccc;}
+    .menu-background a {color:#cccccc;text-decoration:none;font-weight:normal;}
+    .menu-background a:hover {color:#cccccc;text-decoration:none;font-weight:normal;}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+<ul id="generatecssdotcom_animated_menu">
+    <li><a href="Home%20Page.html">Home</a></li>
+    <li><a href="Products.html">Products</a></li>
+    <li><a href="About%20Us.html">About Us</a></li>
+    <li><a href="Sign%20Up.html">Sign Up</a></li>
+</ul>
+</ul>
+
+<!--Cardboard Task Bars-->
+<script>
+    $(function() {
+        var d=300;
+        $('#generatecssdotcom_animated_menu a').each(function(){
+            var $this = $(this);
+            var r=Math.floor(Math.random()*41)-20;
+            $this.css({
+                '-moz-transform':'rotate('+r+'deg)',
+                '-webkit-transform':'rotate('+r+'deg)',
+                'transform':'rotate('+r+'deg)'
+            });
+            $this.stop().animate({
+                'marginTop':'-70px'
+            },d+=150);
+        });
+        $('#generatecssdotcom_animated_menu > li').hover(
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop().animate({
+                        'marginTop':'-40px'
+                    },200);
+                },
+                function () {
+                    var $this = $(this);
+                    $('a',$this).stop().animate({
+                        'marginTop':'-70px'
+                    },200);
+                }
+        ).click(function(){
+                    var $this = $(this);
+                    var name = this.className;
+                });
+    });
+</script>
+
+<!--Background and Title-->
+
+
+
+<body background="http://www.psdgraphics.com/file/antique-paper.jpg">
+<a href="Cart%20page.html"><img src="http://www.free-icons-download.net/images/shopping-cart-logo-icon-70706.png" align="right" width="42" height="42"></a>
+<h1 align="right" style="color:#FFAC37;">About Us</h1>
+<hr>
+
+
+<img src="2016-02-08%2015.12.07.png" width="42" height="42">
+
+<div>
+    <ul><input class="enjoy-css" placeholder="Search"/>
+        <input type="button" class="enjoy-css" value="Search"/></ul>
+</div>
+
+
 </html>
